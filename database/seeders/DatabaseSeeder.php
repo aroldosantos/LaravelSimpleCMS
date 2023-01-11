@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
                 ['administrator' => 'N'],
             ))
             ->create();
+
+        \App\Models\Categoria::factory()->count(10)->create();
     }
 }
