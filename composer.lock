@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9a0f7180550779512b22321da07df81",
+    "content-hash": "810163908af302f80805f4fe838b4da1",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1176,6 +1176,52 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "kdion4891/laravel-livewire-tables",
+            "version": "1.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kdion4891/laravel-livewire-tables.git",
+                "reference": "47baad20d7b9dc533ce79783c0bea2de15c71bd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kdion4891/laravel-livewire-tables/zipball/47baad20d7b9dc533ce79783c0bea2de15c71bd6",
+                "reference": "47baad20d7b9dc533ce79783c0bea2de15c71bd6",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kdion4891\\LaravelLivewireTables\\Providers\\TableServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kdion4891\\LaravelLivewireTables\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kevin Dion",
+                    "email": "kdion4891@icloud.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A dynamic, responsive Laravel Livewire table component with searching, sorting, checkboxes, and pagination.",
+            "homepage": "https://github.com/kdion4891/laravel-livewire-tables",
+            "support": {
+                "issues": "https://github.com/kdion4891/laravel-livewire-tables/issues",
+                "source": "https://github.com/kdion4891/laravel-livewire-tables/tree/1.6.1"
+            },
+            "time": "2020-03-04T03:13:42+00:00"
         },
         {
             "name": "laravel/fortify",
@@ -3504,6 +3550,65 @@
                 }
             ],
             "time": "2022-12-31T22:20:34+00:00"
+        },
+        {
+            "name": "spatie/laravel-sluggable",
+            "version": "3.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-sluggable.git",
+                "reference": "8d42bbfac13302e9bfbcc869ea5579c235aa4981"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/8d42bbfac13302e9bfbcc869ea5579c235aa4981",
+                "reference": "8d42bbfac13302e9bfbcc869ea5579c235aa4981",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^8.0|^9.0",
+                "illuminate/support": "^8.0|^9.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.23|^7.0",
+                "pestphp/pest": "^1.20",
+                "spatie/laravel-translatable": "^5.0|^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Sluggable\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate slugs when saving Eloquent models",
+            "homepage": "https://github.com/spatie/laravel-sluggable",
+            "keywords": [
+                "laravel-sluggable",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/laravel-sluggable/tree/3.4.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-12-07T13:04:11+00:00"
         },
         {
             "name": "symfony/console",
@@ -8427,5 +8532,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }

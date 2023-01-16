@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import laravel, { refreshPaths } from 'laravel-vite-plugin';
+const host = 'http://simplecms.test'; 
 
 export default defineConfig({
     plugins: [
@@ -11,7 +12,12 @@ export default defineConfig({
             refresh: [
                 ...refreshPaths,
                 'app/Http/Livewire/**',
+                'resources/views/**',
             ],
+            server: { 
+                host, 
+                hmr: { host }, 
+            }, 
         }),
     ],
 });
