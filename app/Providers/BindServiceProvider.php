@@ -1,9 +1,19 @@
 <?php
 
+/**
+ * @author      Aroldo de Moura Santos
+ * @copyright   2023 Aroldo de Moura Santos
+ * @license     GPL-3.0 license
+ * @link        https://github.com/aroldosantos/LaravelSimpleCMS
+ */
+
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class BindServiceProvider ServiceProvider
+ */
 class BindServiceProvider extends ServiceProvider
 {
     /**
@@ -14,11 +24,11 @@ class BindServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            'App\Contracts\PostRepositoryInterface', 
+            'App\Contracts\PostRepositoryInterface',
             'App\Repositories\PostRepository'
         );
         $this->app->bind(
-            'App\Contracts\CategoriaRepositoryInterface', 
+            'App\Contracts\CategoriaRepositoryInterface',
             'App\Repositories\CategoriaRepository'
         );
     }

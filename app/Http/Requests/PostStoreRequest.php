@@ -1,9 +1,15 @@
 <?php
+/**
+ * @author      Aroldo de Moura Santos
+ * @copyright   2023 Aroldo de Moura Santos
+ * @license     GPL-3.0 license
+ * @link        https://github.com/aroldosantos/LaravelSimpleCMS
+ */
 
 namespace App\Http\Requests;
 
-use Illuminate\Validation\Rules\File;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rules\File;
 
 class PostStoreRequest extends FormRequest
 {
@@ -35,7 +41,6 @@ class PostStoreRequest extends FormRequest
         ];
     }
 
-
     /**
      * Get the error messages for the defined validation rules.
      *
@@ -54,7 +59,5 @@ class PostStoreRequest extends FormRequest
             'user_id.required' => 'O Autor é obrigatório',
         ];
     }
-
-
 
 }
