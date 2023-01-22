@@ -82,33 +82,33 @@
                                                 <input type="hidden" name="user_id" value="{{$post->user_id}}">
                                                 <input type="hidden" name="post_id" value="{{$post->id}}">
                                                 <div>
-                                                    <label for="titulo" class="sr-only">Título</label>
-                                                    <input name="titulo" id="titulo" type="text"
-                                                        value="{{$post->titulo}}"
+                                                    <label for="title" class="sr-only">Título</label>
+                                                    <input name="title" id="title" type="text"
+                                                        value="{{$post->title}}"
                                                         class="appearance-none rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 focus:z-10  sm:text-sm"
                                                         placeholder="Título do Post" autofocus>
 
                                                 </div>
                                                 <div>
-                                                    <label for="resumo" class="sr-only">Resumo</label>
-                                                    <textarea id="resumo" name="resumo" cols="30" rows="3"
+                                                    <label for="summary" class="sr-only">Resumo</label>
+                                                    <textarea id="summary" name="summary" cols="30" rows="3"
                                                         class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 focus:z-10 sm:text-sm"
-                                                        placeholder="Resumo do texto">{{$post->resumo}}</textarea>
+                                                        placeholder="Resumo do texto">{{$post->summary}}</textarea>
                                                 </div>
                                                 <div>
-                                                    <textarea id="conteudo"
-                                                        name="conteudo">{{$post->conteudo}}</textarea>
+                                                    <textarea id="content"
+                                                        name="content">{{$post->content}}</textarea>
                                                 </div>
                                                 <div>
-                                                    <label for="categoria_id" class="sr-only">Categoria do post</label>
-                                                    <select id="categoria_id" name="categoria_id"
+                                                    <label for="category_id" class="sr-only">Categoria do post</label>
+                                                    <select id="category_id" name="category_id"
                                                         class="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900  focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 focus:z-10 sm:text-sm">
-                                                        <option value="{{$post->categoria->id}}">
-                                                            {{$post->categoria->categoria}}</option>
-                                                        @foreach ($categorias as $categoria)
-                                                        <option value="{{ $categoria->id }}"
-                                                            @selected(old('categoria_id')==$categoria->id)>
-                                                            {{ $categoria->categoria}}
+                                                        <option value="{{$post->category->id}}">
+                                                            {{$post->category->category}}</option>
+                                                        @foreach ($categories as $category)
+                                                        <option value="{{ $category->id }}"
+                                                            @selected(old('category_id')==$category->id)>
+                                                            {{ $category->category}}
                                                         </option>
                                                         @endforeach
                                                     </select>
@@ -126,10 +126,10 @@
                                                 </div>
 
                                                 <div class="sm:flex">
-                                                    @if ($post->img_dest)
+                                                    @if ($post->featured_image)
                                                     <div class="mt-4">
                                                         <p>Imagem atual:</p>
-                                                        <img src="{{Storage::url($post->img_dest)}}" class="h-20" alt="">
+                                                        <img src="{{Storage::url($post->featured_image)}}" class="h-20" alt="">
                                                     </div>
                                                     @endif
 
@@ -167,7 +167,7 @@
     @push('scripts')
     <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
     <script>
-        CKEDITOR.replace('conteudo');  
+        CKEDITOR.replace('content');  
     </script>
     @endpush
 </x-app-layout>

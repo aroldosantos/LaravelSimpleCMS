@@ -28,8 +28,8 @@ class BindServiceProvider extends ServiceProvider
             'App\Repositories\PostRepository'
         );
         $this->app->bind(
-            'App\Contracts\CategoriaRepositoryInterface',
-            'App\Repositories\CategoriaRepository'
+            'App\Contracts\CategoryRepositoryInterface',
+            'App\Repositories\CategoryRepository'
         );
     }
 

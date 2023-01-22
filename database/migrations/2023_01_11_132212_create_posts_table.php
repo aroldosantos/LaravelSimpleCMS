@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
+            $table->string('title');
             $table->string('slug');
-            $table->text('resumo');
-            $table->string('img_dest')->nullable();
-            $table->text('conteudo');
+            $table->text('summary');
+            $table->string('featured_image')->nullable();
+            $table->text('content');
             $table->enum('status', ['Rascunho', 'Publicado']);
-            $table->foreignId('categoria_id')->constrained('categorias');
+            $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('user_id')->constrained('users');
             $table->timestamps();
         });

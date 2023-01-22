@@ -31,12 +31,12 @@ class PostStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'titulo' => 'required',
-            'resumo' => 'required',
-            'conteudo' => 'required',
+            'title' => 'required',
+            'summary' => 'required',
+            'content' => 'required',
             'status' => 'required',
             'image' => File::image()->max(2 * 1024),
-            'categoria_id' => 'required',
+            'category_id' => 'required',
             'user_id' => 'required',
         ];
     }
@@ -49,13 +49,13 @@ class PostStoreRequest extends FormRequest
     public function messages()
     {
         return [
-            'titulo.required' => 'O título é obrigatório',
-            'resumo.required' => 'O resumo é obrigatório',
-            'conteudo.required' => 'O conteúdo é obrigatório',
+            'title.required' => 'O título é obrigatório',
+            'summary.required' => 'O resumo é obrigatório',
+            'content.required' => 'O conteúdo é obrigatório',
             'image.max' => 'O tamanho máximo da imagem é de 2MB',
             'image.image' => 'O arquivo deve ser uma imagem',
             'status.required' => 'O status é obrigatório',
-            'categoria_id.required' => 'A categoria é obrigatória',
+            'category_id.required' => 'A categoria é obrigatória',
             'user_id.required' => 'O Autor é obrigatório',
         ];
     }

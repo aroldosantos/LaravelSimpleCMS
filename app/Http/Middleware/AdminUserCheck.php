@@ -17,7 +17,7 @@ class AdminUserCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::user()->administrator == "Y"){
+        if(Auth::user()->administrator === true){
             return $next($request);
         }
 

@@ -28,13 +28,13 @@ class Post extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'titulo',
+        'title',
         'slug',
-        'resumo',
-        'img_dest',
-        'conteudo',
+        'summary',
+        'featured_image',
+        'content',
         'status',
-        'categoria_id',
+        'category_id',
         'user_id',
     ];
 
@@ -46,7 +46,7 @@ class Post extends Model
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('titulo')
+            ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
     }
 
@@ -55,9 +55,9 @@ class Post extends Model
      *
      * Get the post category
      */
-    public function categoria()
+    public function category()
     {
-        return $this->belongsTo(Categoria::class);
+        return $this->belongsTo(Category::class);
     }
 
     /**

@@ -9,7 +9,7 @@
 
 namespace App\Http\Controllers\Painel;
 
-use App\Contracts\CategoriaRepositoryInterface;
+use App\Contracts\CategoryRepositoryInterface;
 use App\Contracts\PostRepositoryInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostStoreRequest;
@@ -23,11 +23,11 @@ class PostController extends Controller
     /**
      * PostController constructor
      * @param PostRepositoryInterface $posts,
-     * @param CategoriaRepositoryInterface $categorias
+     * @param CategoryRepositoryInterface $categorias
      */
     public function __construct(
         protected PostRepositoryInterface $posts,
-        protected CategoriaRepositoryInterface $categorias
+        protected CategoryRepositoryInterface $categories
     ) {}
 
     /**
@@ -47,9 +47,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categorias = $this->categorias->getAll();
+        $categorias = $this->categories->getAll();
         return view('painel.posts.posts_create', [
-            'categorias' => $categorias,
+            'categories' => $categorias,
         ]);
     }
 
@@ -62,7 +62,7 @@ class PostController extends Controller
     public function store(PostStoreRequest $request)
     {
         $data = $request->validated();
-        $data['img_dest'] = $this->imagePath($request);
+        $data['featured_image'] = $this->imagePath($request);
 
         $this->posts->create($data);
         return redirect()->route('posts.create')->with('status', 'Post criado com sucesso!');
@@ -89,11 +89,11 @@ class PostController extends Controller
     public function edit($id)
     {
         $post = $this->posts->find($id);
-        $categorias = $this->categorias->getAll();
+        $categories = $this->categories->getAll();
 
         return view('painel.posts.posts_update', [
             'post' => $post,
-            'categorias' => $categorias,
+            'categories' => $categories,
         ]);
     }
 
@@ -107,7 +107,7 @@ class PostController extends Controller
     {
         $id = $request->post_id;
         $data = $request->validated();
-        $data['img_dest'] = $this->imagePath($request);
+        $data['featured_image'] = $this->imagePath($request);
 
         $this->deleteImage($id);
         $this->posts->update($data, $id);
@@ -135,7 +135,7 @@ class PostController extends Controller
      */
     public function deleteImage($id)
     {
-        $image = $this->posts->find($id)->img_dest;
+        $image = $this->posts->find($id)->featured_image;
         if ($image) {
             Storage::delete($image);
         }

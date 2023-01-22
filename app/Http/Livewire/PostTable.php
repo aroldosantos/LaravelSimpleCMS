@@ -22,19 +22,19 @@ class PostTable extends TableComponent
     public function query()
     {
         if (Auth::user()->administrator == 'N') {
-            return Post::with('categoria', 'user')->where('user_id', Auth::id());
+            return Post::with('category', 'user')->where('user_id', Auth::id());
         }
 
-        return Post::with('categoria', 'user');
+        return Post::with('category', 'user');
     }
 
     public function columns()
     {
         return [
             Column::make('ID', 'id')->searchable()->sortable(),
-            Column::make('Título', 'titulo')->searchable()->sortable(),
+            Column::make('Título', 'title')->searchable()->sortable(),
             Column::make('Autor', 'user.name')->searchable()->sortable(),
-            Column::make('Categoria', 'categoria.categoria')->searchable()->sortable(),
+            Column::make('Categoria', 'category.category')->searchable()->sortable(),
             Column::make('Data', 'created_at')->view('painel.posts.post_date_table')->searchable()->sortable(),
             Column::make('Operações')->view('painel.posts.post-links-table'),
         ];
