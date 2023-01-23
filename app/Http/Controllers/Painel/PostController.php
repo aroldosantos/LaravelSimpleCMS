@@ -23,7 +23,7 @@ class PostController extends Controller
     /**
      * PostController constructor
      * @param PostRepositoryInterface $posts,
-     * @param CategoryRepositoryInterface $categorias
+     * @param CategoryRepositoryInterface $categories
      */
     public function __construct(
         protected PostRepositoryInterface $posts,
@@ -47,9 +47,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categorias = $this->categories->getAll();
+        $categories = $this->categories->getAll();
         return view('painel.posts.posts_create', [
-            'categories' => $categorias,
+            'categories' => $categories,
         ]);
     }
 
